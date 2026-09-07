@@ -19,8 +19,17 @@
 
 <body>
     <img src="./polyester.gif" alt=""></img>
-    <audio autoplay loop>
-        <source src="./polyester.wav" type="audio/mpeg">
-    </audio>
+    <audio id="music" src="./polyester.wav"></audio>
+
+    <script>
+    const music = document.getElementById("music");
+
+    music.addEventListener("ended", () => {
+        music.currentTime = 0;
+        music.play();
+    });
+
+    music.play();
+    </script>
 </body>
 </html>
